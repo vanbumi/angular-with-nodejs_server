@@ -10,5 +10,14 @@ var myController = function($scope) {
 // to short cot here
 myApp.controller("myController", function($scope) {
 	$scope.message = "AngularJS Tutorial";
+
+	var employee = {
+		firstName: "Dyo",
+		lastName: "Bumi",
+		gender: "Male"
+	};
+
+	$scope.employee = employee;
+
 });
 
