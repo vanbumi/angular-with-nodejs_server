@@ -5,6 +5,12 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 	<script src="scripts/Script.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	
 </head>
 
@@ -23,6 +29,118 @@
 	<div>
 		Gender: {{employee.gender}}
 	</div>
-	
+
+	<div>
+		<h1>{{ judul }}</h1>
+		<p>Country Name		: {{ country.name }}</p>
+		<p>Country Capital 	: {{ country.capital }}</p>
+		<p>Country Flag 	: <br><img ng-src="{{ country.flag }}" alt="{{ country.name + ' Bendera'}}" width="200" height="150"></p>
+	</div>
+
+	<div>
+		<h1>{{tutorial5}}</h1>
+
+		<input type="text" ng-model="salam">
+		<h2>{{ pesan }}</h2>
+		<h2>{{ salam }}</h2>
+	</div>
+
+	<div>
+		<h1>List of Employe</h1>
+	</div>
+
+	<table>
+		<tr>
+			<td>First Name:</td>
+			<td>
+				<input type="text" ng-model="employee.firstName">
+			</td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td>
+				<input type="text" ng-model="employee.lastName">
+			</td>
+		</tr>
+		<tr>
+			<td>Gender:</td>
+			<td>
+				<input type="text" ng-model="employee.gender">
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<tr>
+			<td>First Name:</td>
+			<td>
+				{{ employee.firstName }}
+			</td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td>
+				{{ employee.lastName }}
+			</td>
+		</tr>
+		<tr>
+			<td>Gender:</td>
+			<td>
+				{{ employee.gender }}
+			</td>
+		</tr>
+	</table>
+
+	<!-- 6th Tutorial -->
+	<h1>Tut 6 - ng-repeat directive</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Subject</th>
+				<th>Mark</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr ng-repeat="student in students">
+				<td>{{ student.firstName }}</td>
+				<td>{{ student.lastName }}</td>
+				<td>{{ student.subjectRoom }}</td>
+				<td>{{ student.mark }}</td>
+			</tr>
+		</tbody>
+	</table>	
+
+	<!-- 6th Tutorial -->
+	<h1>Nesting ng-repeat</h1>
+	<h2>Lists of Countries</h2>
+
+	<ul>
+		<li ng-repeat="negara in countries">
+			{{ negara.name }}
+			<ul>
+				<li ng-repeat="kota in negara.cities">
+					{{ kota.name }}
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
